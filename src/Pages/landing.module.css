@@ -22,19 +22,7 @@ body {
     display: flex;
 }
 
-.deb {
-    margin-right: 0.5rem;
-    overflow-y: scroll;
-    width: 26.5rem;
-    border: 0.0625rem solid #949494 !important;
-    border-radius: 0.5rem;
-    z-index: 1;
-    max-height: 300px;
-}
 
-.deb::-webkit-scrollbar {
-    display: none;
-}
 
 .search {
     display: flex;
@@ -46,6 +34,21 @@ body {
     line-height: 1.125rem;
     overflow: hidden;
     height: 1.125rem;
+}
+
+.deb {
+  margin-right: 0.5rem;
+  overflow-y: scroll;
+  width: 26.5rem;
+  border: 0.0625rem solid #949494 !important;
+  border-radius: 0.5rem;
+  z-index: 1;
+ 
+  max-height: 300px;
+}
+
+.deb::-webkit-scrollbar {
+  display: none;
 }
 
 .lab {
@@ -71,19 +74,6 @@ body {
     border: none;
 }
 
-.inpu {
-    width: 100%;
-    border: none;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    outline: none;
-}
-
-.inpu:focus {
-    outline: none;
-    border: none;
-}
-
 .deb2 {
     margin-right: 0.5rem;
     /* overflow-y: scroll; */
@@ -91,9 +81,45 @@ body {
     border: 0.0625rem solid #949494 !important;
     border-radius: 0.5rem;
     z-index: 1;
-    max-height: 300px;
+    height: 50px;
   }
-  
+
+  .search2 {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #2d2d2d;
+    line-height: 1.125rem;
+    overflow: hidden;
+    height: 1.125rem;
+}
+
+.inp2 {
+  width: 100%;
+  margin-right: 30px;
+}
+
+.inpu2 {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  outline: none;
+}
+
+.inpu2:focus {
+  outline: none;
+  border: none;
+}
+
+.lab2 {
+  padding-right: 1rem;
+  font-weight: 700;
+  display: inline-block !important;
+}
+
   .btn {
     width: 200px;
     font-weight: 600;
@@ -208,3 +234,24 @@ body {
     top: 86vh;
     width: 100vw;
   }
+  .resume {
+    position: absolute;
+    top: 103vh;
+    width: 100vw;
+  }
+
+  /* debouncing */
+
+.autocomplete {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0, 3);
+}
+
+.autocompleteItems {
+  padding: 10px 5px;
+  cursor: pointer;
+  padding-left: 15px;
+  color: black;
+}
