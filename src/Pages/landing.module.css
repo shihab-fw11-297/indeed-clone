@@ -203,7 +203,8 @@ body {
       color: #2557a7;
   }
 
-  .line{
-    border-bottom: 1px solid #e4e2e0; 
-    height: 50px;
+  .footDiv {
+    position: absolute;
+    top: 86vh;
+    width: 100vw;
   }

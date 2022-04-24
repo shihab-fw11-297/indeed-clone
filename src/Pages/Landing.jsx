@@ -1,4 +1,5 @@
 import Header from '../Components/Header';
+import {Footer} from '../Components/Footer';
 import { Optioncard } from "../Components/Optioncard";
 import styles from "./landing.module.css";
 
@@ -98,6 +99,15 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
+
+            <div className={styles.footDiv}>
+                <Footer></Footer>
+            </div>
+
+            <div className={styles.resume}>
+                <ResumeUpload></ResumeUpload>
+            </div>
+            
         </div>
     )
 }
