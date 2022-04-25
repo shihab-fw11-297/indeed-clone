@@ -87,7 +87,7 @@ const Header = () => {
                         color: "#2557a7",
                         fontWeight: "700",
                     }}>
-                    <nav ><Link to="/" style={{ textDecoration: "none", color: "#2557a7" }} >Sign In</Link></nav>
+                    <nav ><Link to="/signup" style={{ textDecoration: "none", color: "#2557a7" }} >Sign In</Link></nav>
                 </div>
                 <div
                     style={{
