@@ -1,14 +1,14 @@
-import Header from '../Components/Header';
-import {Footer} from '../Components/Footer';
-import { Optioncard } from "../Components/Optioncard";
+import Header from '../../Components/Header/Header';
+import {Footer} from '../../Components/Footer/Footer';
+import { Optioncard } from "../../Components/optioncards/Optioncard";
 import styles from "./landing.module.css";
-import {ResumeUpload} from '../Components/ResumeUpload';
+import {ResumeUpload} from '../../Components/ResumeUpload/ResumeUpload';
 
 import { BsSearch } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 import { useCallback, useState, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom';
-import {jobs }from '../jobs' 
+import {jobs }from '../../jobs' 
 
 const Landing = () => {
     const [search, setSearch] = useState([]);

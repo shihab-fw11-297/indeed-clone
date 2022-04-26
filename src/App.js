@@ -1,33 +1,25 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Landing from './Pages/Landing';
-import {SignUp} from './Pages/SignUp';
-import {Login} from './Pages/Login';
+import { Routes, Route } from 'react-router-dom';
+import Landing from './Pages/home/Landing';
+import { SignUp } from './Pages/authentication/SignUp';
+import { Login } from './Pages/authentication/Login';
+import { SearchResults } from './Pages/result/SearchResults';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
+      <Routes>
+       
+        <Route path="/" element={<Landing />} /> 
 
-          <Route path="/signup">
-            <SignUp />
-          </Route>
+        <Route path="/signup" element={<SignUp />} /> 
 
-          <Route path="/signup">
-            <SignUp />
-          </Route>
+        <Route path="/login" element={<Login />} /> 
+       
+        <Route path="/SearchResults" element={<SearchResults />} /> 
 
-          <Route exact path="/login">
-              <Login />
-          </Route>
-          
-        </Switch>
-      </Router>
+      </Routes>
     </div>
   );
 }
