@@ -4,6 +4,7 @@ import { Header1 } from '../../Components/Header/Header1';
 import { JobCards } from '../../Components/JobCards/JobCards';
 import { Footer } from '../../Components/Footer/Footer';
 import { ResumeUpload } from '../../Components/ResumeUpload/ResumeUpload';
+import { JobDetails } from '../../Components/JobDetails/JobDetails';
 
 import styles from "./result.moule.css";
 import { jobs } from '../../jobs'
@@ -101,9 +102,9 @@ export const SearchResults = () => {
                         />
                     </div>
                 </div>
-                {/* <div className={crossit ? "hideit" : "right-container"} >
+                <div className={crossit ? "hideit" : "right-container"} >
                     {details === "" ? null : <JobDetails details={details} crossit={crossit} setCrossit={setCrossit} />}
-                </div> */}
+                </div>
             </div>
             <Footer />
             <ResumeUpload />

@@ -21,48 +21,48 @@ export const Buttons = ({ tag, filters, setUsers, jobs }) => {
         if (tag === "Date Posted") {
             if (temp.length === 12) {
                 temp = temp.slice(5, 7)
-                // let fData = jobs.filter((el) => (Number(el.date) <= Number(temp)))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (Number(el.date) <= Number(temp)))
+                setUsers(fData)
 
             }
             else {
 
                 temp = temp.slice(5, 6)
-                // let fData = jobs.filter((el) => (Number(el.date) <= Number(temp)))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (Number(el.date) <= Number(temp)))
+                setUsers(fData)
             }
         }
         else if (tag === "Remote") {
             if (temp[0] === "W") {
-                // let fData = jobs.filter((el) => (el.remote === "Work From Home"))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (el.remote === "Work From Home"))
+                setUsers(fData)
 
             }
             else {
-                // let fData = jobs.filter((el) => (el.remote === "Onsite"))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (el.remote === "Onsite"))
+                setUsers(fData)
             }
         }
 
         else if (tag === "Education level") {
             if (temp[0] === "B") {
-                // let fData = jobs.filter((el) => (el.education === "btech"))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (el.education === "btech"))
+                setUsers(fData)
 
             }
             else if (temp[1] === "2") {
-                // let fData = jobs.filter((el) => (el.education === "intermediate"))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (el.education === "intermediate"))
+                setUsers(fData)
             }
             else if (temp[1] === "0") {
-                // let fData = jobs.filter((el) => (el.education === "matric"))
-                // setUsers(fData)
+                let fData = jobs.filter((el) => (el.education === "matric"))
+                setUsers(fData)
             }
         }
 
         else if (tag === "Company") {
-            // let fData = jobs.filter((el) => (el.companyName === temp))
-            // setUsers(fData)
+            let fData = jobs.filter((el) => (el.companyName === temp))
+            setUsers(fData)
         }
 
     }
