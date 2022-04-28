@@ -1,10 +1,11 @@
 import './Filter.css'
 import { Buttons } from "../button/Buttons";
+import Search from '../Search/Search';
 import Button from "@material-ui/core/Button";
 import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp';
 
-export const Filters = ({ setUsers, jobs }) => {
-
+export const Filters = ({ setUsers, jobs,query,setQuery }) => {
+console.log(setUsers);
     const filters = [
         "Date Posted",
         "Remote",
@@ -36,23 +37,9 @@ export const Filters = ({ setUsers, jobs }) => {
     return (
         <div className="upper-part">
             <div className="wrapper">
-                <div className="form-container">
-                    <form className="form">
-                        <div className="job-input">
-                            What
-                            <input type="text" placeholder="Accountant" />
-                        </div>
-                        <div className="job-input">
-                            Where
-                            <input type="text" placeholder="Noida, Uttar Pradesh" />
-                        </div>
-                        <span className="findjobs">
-                            <button className="jobs" type="submit">Find Jobs</button>
-                            <span className="advance">Advanced Job Search</span>
-                        </span>
-                    </form>
-                </div>
-
+               
+                   <Search query={query} setQuery={setQuery} setUsers={setUsers}/>
+              
                  {/* Filter Dropdowns */}
                  <div className="filter-div">
                     <Buttons setUsers={setUsers} jobs={jobs} tag={filters[0]} filters={dateItems} />

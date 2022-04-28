@@ -6,6 +6,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import './Buttons.css'
 import { useRef, useState } from 'react';
 export const Buttons = ({ tag, filters, setUsers, jobs }) => {
+    
     const [state, setState] = useState(false);
     const [crss, setCrss] = useState(true);
     const [label, setLabel] = useState("")

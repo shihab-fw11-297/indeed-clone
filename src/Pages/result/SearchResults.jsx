@@ -13,6 +13,7 @@ import ReactPaginate from 'react-paginate';
 
 export const SearchResults = () => {
     const [users, setUsers] = useState(jobs.slice(0, 50))
+    const [query, setQuery] = useState("");
     const user="shihab";
     const [pageNumber, setpageNumber] = useState(0)
     const [details, setDetails] = useState("")
@@ -41,7 +42,7 @@ export const SearchResults = () => {
             {user ? <Header1 /> : <Header />}
             </div>
           
-            <Filters setUsers={setUsers} jobs={jobs} />
+            <Filters setUsers={setUsers} jobs={jobs} query={query} setQuery={setQuery}/>
             <div className="middle-container" >
                 <div className="Left-container">
                     <div className="search-param">
