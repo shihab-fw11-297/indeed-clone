@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { jobs } from '../../jobs'
 import styles from "./search.module.css";
 
-const Search = ({ query, setQuery, setUsers }) => {
-
+const Search = () => {
+    const [query, setQuery] = useState("");
     const [search, setSearch] = useState([]);
     const options = useRef();
     const buttref = useRef();
@@ -26,11 +26,7 @@ const Search = ({ query, setQuery, setUsers }) => {
         buttref.current.style.overflowY = "none"
     }
 
-    const filter = () => {
-        let fData = jobs.filter((el) => (el.job === options.current.value))
-        setUsers(fData)
-
-    }
+   
 
     return (
         <>
@@ -67,7 +63,7 @@ const Search = ({ query, setQuery, setUsers }) => {
                                                 </div>
                                             ))}
                                         </div>
-                                    ) : setQuery("")}
+                                    ) : ""}
                             </div>
                         </div>
 
@@ -87,7 +83,7 @@ const Search = ({ query, setQuery, setUsers }) => {
                             </div>
                         </div>
                     </form>
-                    <button className={styles.btn} onClick={filter}><Link className="link" to="/results">Find jobs</Link></button>
+                    <button className={styles.btn} ><Link className="link" to="/results">Find jobs</Link></button>
                 </div>
             </div>
 

@@ -30,7 +30,6 @@
   width: 26.5rem;
   border: 0.0625rem solid #949494 !important;
   border-radius: 0.5rem;
-  z-index: auto;
   max-height: 300px;
 }
 
@@ -67,7 +66,6 @@
     width: 24.5rem;
     border: 0.0625rem solid #949494 !important;
     border-radius: 0.5rem;
-    z-index: 1;
     height: 50px;
   }
 
@@ -128,12 +126,13 @@
 
 .autocomplete {
   width: 100%;
-  background: #fff;
+  background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0, 3);
 }
 
 .autocompleteItems {
+  background-color: white;
   padding: 10px 5px;
   cursor: pointer;
   padding-left: 15px;

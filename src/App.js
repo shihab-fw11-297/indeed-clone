@@ -5,6 +5,8 @@ import Landing from './Pages/home/Landing';
 import { SignUp } from './Pages/authentication/SignUp';
 import { Login } from './Pages/authentication/Login';
 import { SearchResults } from './Pages/result/SearchResults';
+import MainApply from './Pages/apply/MainApply';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
        
         <Route path="/results" element={<SearchResults />} /> 
 
+        <Route path="/apply" element={<MainApply />} />
       </Routes>
     </div>
   );
