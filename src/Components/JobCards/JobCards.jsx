@@ -14,7 +14,7 @@ export const JobCards = ({ ele, setDetails, crossit, setCrossit }) => {
     };
 
     const saveJob = (e) => {
-      
+        localStorage.setItem('appliedJob', JSON.stringify(ele))
         for (let i = 0; i < jobs.length; i++) {
             if (jobs[i].id === e) {
                 let item = jobs[i]

@@ -1,77 +1,56 @@
 import styled from "styled-components";
 import { RiMessage2Fill } from "react-icons/ri";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { Link, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
-//import { Navigate, useNavigate } from "react-router-dom
+import "bootstrap/dist/css/bootstrap.css";
+// import Hamburger from "./Hamburger";
+import { Link } from "react-router-dom"
 
 const Head = styled.div`
+
   display: flex;
-  justify-content: space-between;
-  padding-left: 25px;
-  padding-top: 20px;
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 100%;
   div {
     color: #2d2d2d;
-    font-size: 0.75rem;
-  }
-`;
-
-const Left = styled.div`
-  margin-left: 25px;
-  display: flex;
-  
-  cursor: pointer;
-  width:500px;
-  div {
-    font-size:17px;
-    margin-top:13px;
-    font-weight:400;
-    margin-right: 17px;
-    padding-bottom: 15px;
+    font-size: 0.875rem;
   }
 `;
 
 const Right = styled.div`
-  margin-left: 30vw;
+  margin-left: 40vw;
   display: flex;
-  width:500px;
-  cursor: pointer;
+  width: 28vw;
   div {
-    font-size:17px;
-    margin-top:13px;
-    font-weight:400;
-    margin-right: 17px;
-    padding-bottom: 15px;
+    margin-right: 20px;
+  }
+
+  div:hover {
+    border-bottom: 0.125rem solid transparent;
+    border-bottom-color: #2557a7;
+  }
+  svg {
+    height: 1.8rem;
+    width: 1.5rem;
+  }
+  nav{
+    width:100px;
   }
 `;
 
-
-
-function Header1({ setSign }) {
-    //   let user = JSON.parse(localStorage.getItem('user'))
-    const navigate = useNavigate();
-    const clear = () => {
-        localStorage.clear('user', 'appliedJob', 'searchQuery', 'x', 'y');
-         if (window.location.pathname === '/') {
-                window.location.reload();
-            } else{
-                navigate("/");
-            }
-    }
-
+function Head1() {
     return (
         <>
-            <Head style={{ paddingBottom: "50px", borderBottom: "1px solid #e4e2e0", height: "50px" }}>
+            <Head style={{ height: "50px" }}>
                 <div>
                     <svg
-                        width="100"
-                        height="35"
+                        width="75"
+                        height="20"
                         viewBox="0 0 75 20"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         focusable="false"
-                        aria-hidden="true"
-                    >
+                        aria-hidden="true">
                         <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -80,11 +59,6 @@ function Header1({ setSign }) {
                         ></path>
                     </svg>
                 </div>
-                <Left>
-                    <div><Link to="/" style={{ textDecoration: "none", color: "inherit" }}>Find jobs</Link></div>
-                    <div>Company reviews</div>
-                    <div>Find salaries</div>
-                </Left>
 
                 <Right>
                     <div>
@@ -100,21 +74,12 @@ function Header1({ setSign }) {
                             color: "#2557a7",
                             fontWeight: "700",
                         }}>
-                        <span style={{ textDecoration: "none", color: "#2557a7" }} onClick={clear}>Sign Out</span>
+                        <nav><Link to="/signup">Sign In</Link></nav>
                     </div>
-
-                    <div
-                        style={{
-                            width: "0.0625rem",
-                            height: "0.5rem",
-                            backgroundColor: "#d4d2d0",
-                        }}
-                    ></div>
-                    <div>Employers/Post job</div>
                 </Right>
             </Head>
         </>
     );
 }
 
-export { Header1 };
+export { Head1 };

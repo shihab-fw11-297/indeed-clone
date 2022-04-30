@@ -17,7 +17,7 @@ const Left = styled.div`
   display: flex;
   
   cursor: pointer;
-  width:550px;
+  width:500px;
   div {
     font-size:17px;
     margin-top:13px;
@@ -25,14 +25,10 @@ const Left = styled.div`
     margin-right: 17px;
     padding-bottom: 15px;
   }
-  div:hover {
-    border-bottom: 0.155rem solid transparent;
-    border-bottom-color: #2557a7;
-  }
 `;
 
 const Right = styled.div`
-  margin-left: 32vw;
+  margin-left: 30vw;
   display: flex;
   width:500px;
   cursor: pointer;
@@ -43,15 +39,11 @@ const Right = styled.div`
     margin-right: 17px;
     padding-bottom: 15px;
   }
-  div:hover {
-    border-bottom: 0.155rem solid transparent;
-    border-bottom-color: #2557a7;
-  }
 `;
 
 const Header = () => {
     return (
-        <Head style={{ borderBottom: "1px solid #e4e2e0", height: "50px" }}>
+        <Head style={{ paddingBottom:"50px",borderBottom: "1px solid #e4e2e0", height: "50px" }}>
             <div>
                 <svg
                     width="100"
@@ -72,7 +64,7 @@ const Header = () => {
             </div>
 
             <Left>
-                <div style={{ borderBottom: "0.155rem solid transparent", borderBottomColor: "#2557a7" }}>
+                <div style={{ paddingBottom:"38px",borderBottom: "0.155rem solid transparent", borderBottomColor: "#2557a7" }}>
                     <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>Find jobs</Link>
                 </div>
                 <div>Company reviews</div>

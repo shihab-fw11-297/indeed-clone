@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#ffffff",
         border: "1px solid #e4e2e0",
         borderRadius:"10px",
-        width: "470px",
+        width: "500px",
         padding: "20px"
     },
     outlinedInput: {
@@ -116,7 +116,43 @@ const HelperButton = withStyles((theme) => ({
 export function SignUp() {
 
     const classes = useStyles();
-    
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+
+
+    let sign = {
+        emaild: "",
+        pass: ""
+    }
+
+    const onEmailChange = (e) => {
+        let y = true
+        let x = 0
+        localStorage.setItem('y', JSON.stringify(y))
+        localStorage.setItem('x', JSON.stringify(x))
+        setEmail(e.target.value)
+        sign.emaild = email
+        sign.pass = password
+
+        localStorage.setItem('user', JSON.stringify(sign))
+
+    }
+
+    const onPasswordChange = (e) => {
+        setPassword(e.target.value)
+        sign.emaild = email
+
+        sign.pass = password
+        localStorage.setItem('user', JSON.stringify(sign))
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+    }
+
 
     return (<Container className={classes.container} maxWidth="xl">
 
@@ -136,17 +172,17 @@ export function SignUp() {
                 <Grid container item spacing={3}>
                     <Grid item >
                         <HelperButton style={{ border: "2px solid #a6a6a6" }} className={classes.buttona} variant="outlined">
-                            <FcGoogle style={{ marginRight: "80px", width: 25, height: 25 , }} /> Continue with Google
+                            <FcGoogle style={{ marginRight: "80px", width: 25, height: 25 }} /> Sign in with Google
                         </HelperButton>
                     </Grid>
                     <Grid item >
                         <HelperButton style={{ border: "2px solid black" }} className={classes.buttona} variant="outlined">
-                            <FaApple style={{ marginRight: "90px", width: 25, height: 25 }} /> Continue with Apple
+                            <FaApple style={{ marginRight: "90px", width: 25, height: 25 }} /> Sign in with Apple
                         </HelperButton>
                     </Grid>
                     <Grid item >
                         <HelperButton style={{ border: "2px solid #1877f2", color: "#1877f2" }} className={classes.buttona} variant="outlined">
-                            <SiFacebook style={{ marginRight: "75px", width: 25, height: 25 }} /> Continue with Facebook
+                            <SiFacebook style={{ marginRight: "75px", width: 25, height: 25 }} /> Sign in with Facebook
                         </HelperButton>
                     </Grid>
                 </Grid>
@@ -155,16 +191,14 @@ export function SignUp() {
                         <hr className={classes.divider} ></hr>
                     </Grid>
                     <Grid style={{ lineHeight: "0px" }} item> or</Grid>
-                    <Grid item>
-                        <hr className={classes.divider} ></hr>
-                    </Grid>
+
                 </Grid>
                 <Grid item>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <FormHelperText className={classes.formhelperText}>Email Address</FormHelperText>
-                        <OutlinedInput className={classes.outlinedInput}  label="ssss" required type="text" variant="outlined" />
+                        <OutlinedInput className={classes.outlinedInput} onChange={onEmailChange} label="ssss" required type="text" variant="outlined" />
                         <FormHelperText className={classes.formhelperText}>Password</FormHelperText>
-                        <OutlinedInput className={classes.outlinedInput}  required type="password" variant="outlined" />
+                        <OutlinedInput className={classes.outlinedInput} onChange={onPasswordChange} value={password} required type="password" variant="outlined" />
                         <FormControlLabel className={classes.checkbox}
                             control={<GreenCheckbox />}
                             label="Keep me signed in on this device."

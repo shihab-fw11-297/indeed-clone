@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { jobs } from '../../jobs'
 import styles from "./search.module.css";
 
-const Search = () => {
+const Search = ({setUsers}) => {
     const [query, setQuery] = useState("");
     const [search, setSearch] = useState([]);
     const options = useRef();
@@ -21,7 +21,9 @@ const Search = () => {
         localStorage.setItem("searchQuery", searchQuery)
 
         options.current.value = e.target.innerText
-
+        setQuery("")
+        setSearch([])
+        setUsers(query)
         buttref.current.style.height = "50px"
         buttref.current.style.overflowY = "none"
     }

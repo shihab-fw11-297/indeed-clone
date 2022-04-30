@@ -5,10 +5,12 @@ import ReviewDiv from './StyledReviewPage'
 import { Link } from "react-router-dom";
 
 const ReviewPage = ({ handleReview, formData }) => {
+    let user = JSON.parse(localStorage.getItem('user'))
+
     return (
         <>
             <ReviewDiv>
-            <div id="prog"></div>
+                <div id="prog"></div>
                 <div className="backArrow">
                     <BiArrowBack id="arrow" onClick={handleReview} />
                     <h6>Application step 5 of 5</h6>
@@ -22,8 +24,8 @@ const ReviewPage = ({ handleReview, formData }) => {
                     </div>
                     <div>
                         <p>Email Address</p>
-                        <h3>abc@gmail.com</h3>
-                        <small>To mitigate fraud, Indeed may mask your email address. If masked, the employer will see an address like <strong>abc@gmail.com</strong>. Some employers, however, may still be able to unmask and see your actual email address.</small>
+                        <h3>{user?.emaild}</h3>
+                        <small>To mitigate fraud, Indeed may mask your email address. If masked, the employer will see an address like <strong>{user?.emaild}</strong>. Some employers, however, may still be able to unmask and see your actual email address.</small>
                     </div>
                     <div>
                         <p>City, State</p>
@@ -38,8 +40,9 @@ const ReviewPage = ({ handleReview, formData }) => {
                 <h4>Resume</h4>
                 <div className="resume">
                     <VscFilePdf />
-                    <h3>{formData.resume.slice(12)}</h3>
+                    <h3>{formData.resume?.slice(12)}</h3>
                 </div>
+
                 <h4>Employee questions</h4>
                 <div className="questions">
                     <div>
@@ -71,9 +74,8 @@ const ReviewPage = ({ handleReview, formData }) => {
                     <button><Link style={{ color: "white" }} to="/sucess">Submit your application</Link></button>
                 </div>
                 <p className="textCenter">Having an issue with this application?<span>Tell us more</span></p>
-                
             </ReviewDiv>
-            </>
+        </>
     );
 }
 

@@ -15,7 +15,8 @@
 .search {
     display: flex;
     align-items: center;
-    padding: 0.9rem 1rem;
+    padding: 1rem 1rem;
+    margin-top: 5px;
     border-radius: 0.5rem;
     background-color: #fff;
     color: #2d2d2d;
@@ -27,9 +28,10 @@
 .deb {
   margin-right: 0.5rem;
   overflow-y: scroll;
-  width: 26.5rem;
+  width: 24rem;
   border: 0.0625rem solid #949494 !important;
   border-radius: 0.5rem;
+  z-index: 1;
   max-height: 300px;
 }
 
@@ -72,7 +74,8 @@
   .search2 {
     display: flex;
     align-items: center;
-    padding: 0.9rem 1rem;
+    padding: 1rem 1rem;
+    margin-top: 5px;
     border-radius: 0.5rem;
     background-color: #fff;
     color: #2d2d2d;
@@ -137,4 +140,53 @@
   cursor: pointer;
   padding-left: 15px;
   color: black;
+}
+
+
+@media (max-width: 620px) {
+  
+  .area {
+    max-width: 619px !important;
+    width: 100% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  form {
+    padding-top: 1rem;
+    flex-direction: column;
+  }
+  .deb {
+    margin-bottom: 1.5rem;
+    width: 23rem !important;
+    padding: 5px;
+    padding-bottom: 5px !important;
+    max-height: 150px;
+    z-index: 100 !important;
+  }
+  .deb2 {
+    margin-bottom: 1.5rem;
+    width: 23rem !important;
+    padding: 5px;
+    padding-bottom: 5px !important;
+    max-height: 150px;
+    z-index: 100 !important;
+  }
+  .btn {
+    width: 91% !important;
+    height: 40px;
+    position: absolute !important;
+    top: 33vh;
+    background-color: #2557a7;
+    border: 0.0625rem solid transparent !important;
+  }
+  .btn a {
+    color: white;
+    font-weight: 600;
+  }
+  .btn a:hover {
+    color: white !important;
+  }
+  .search{
+    margin-top: 5px;
+  }
 }

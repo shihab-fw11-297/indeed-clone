@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp';
 
 export const Filters = ({ setUsers, jobs }) => {
-console.log(setUsers);
+
     const filters = [
         "Date Posted",
         "Remote",
@@ -38,7 +38,7 @@ console.log(setUsers);
         <div className="upper-part">
             <div className="wrapper">
                
-                   <Search />
+                   <Search setUsers={setUsers}/>
               
                  {/* Filter Dropdowns */}
                  <div className="filter-div">

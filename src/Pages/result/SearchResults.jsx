@@ -13,8 +13,7 @@ import ReactPaginate from 'react-paginate';
 
 export const SearchResults = () => {
     const [users, setUsers] = useState(jobs.slice(0, 50))
-    
-    const user="shihab";
+    let user = JSON.parse(localStorage.getItem('user'))
     const [pageNumber, setpageNumber] = useState(0)
     const [details, setDetails] = useState("")
     const [fa, setFa] = useState(true)
@@ -43,6 +42,7 @@ export const SearchResults = () => {
             </div>
           
             <Filters setUsers={setUsers} jobs={jobs} />
+            
             <div className="middle-container" >
                 <div className="Left-container">
                     <div className="search-param">
@@ -82,9 +82,9 @@ export const SearchResults = () => {
                     </div>
                     <div className="jobs-container">
                         {
-                            displayjobs.map((el) => {
+                            displayjobs?.map((el) => {
 
-                                return <JobCards crossit={crossit} setCrossit={setCrossit} ele={el} setDetails={setDetails} />
+                                return <JobCards crossit={crossit} setCrossit={setCrossit} key={el.id} ele={el} setDetails={setDetails} />
                             })
                         }
                     </div>

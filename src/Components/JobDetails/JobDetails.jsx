@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import StarRatings from 'react-star-ratings';
 
 export const JobDetails = ({ details, crossit, setCrossit }) => {
+    let user = JSON.parse(localStorage.getItem('user'))
+
     const [saved, setSaved] = useState(true)
     return (
         <div>
@@ -30,7 +32,7 @@ export const JobDetails = ({ details, crossit, setCrossit }) => {
                 </div>
                 <h4>{details.city}, {details.state}</h4>
                 <div className="apply">
-                    <div className="app"><Link to="/apply">Apply Now</Link></div>
+                    <div className="app"> {user ? <Link to="/apply">Apply Now</Link> :<Link to="/register">Apply Now</Link>}</div>
                     {saved ? <img onClick={() => setSaved(!saved)} src="/heart.png" alt="" /> : <img onClick={() => setSaved(!saved)} src="/oheart.png" alt="" />}
                 </div>
             </div>

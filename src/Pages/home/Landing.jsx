@@ -4,17 +4,22 @@ import { Optioncard } from "../../Components/optioncards/Optioncard";
 import styles from "./landing.module.css";
 import {ResumeUpload} from '../../Components/ResumeUpload/ResumeUpload';
 import Search from '../../Components/Search/Search';
-
-
+import { Head1 } from "./Head1";
+import { Header1 } from '../../Components/Header/Header1';
 
 const Landing = () => {
-   
+    let user = JSON.parse(localStorage.getItem('user'))
     
     return (
         <div className="sd">
             <div className={styles.head}>
-                <Header />
+            {user ? <Header1 /> : <Header />}
             </div>
+
+            <div className={styles.head2}>
+                <Head1 />
+            </div>
+
 
             <div
                 style={{
@@ -71,3 +76,4 @@ const Landing = () => {
 }
 
 export default Landing
+

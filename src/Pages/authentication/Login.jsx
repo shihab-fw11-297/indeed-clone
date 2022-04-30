@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#ffffff",
         border: "1px solid #e4e2e0",
         borderRadius:"10px",
-        width: "470px",
+        width: "505px",
         padding: "20px"
     },
     outlinedInput: {

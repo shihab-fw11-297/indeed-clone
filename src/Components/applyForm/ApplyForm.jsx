@@ -16,16 +16,17 @@ import { TiTick } from "react-icons/ti";
 import { useRef } from 'react'
 
 const ApplyForm = ({ setRight }) => {
-    const inputRef = useRef()
     const [step1, setStep1] = useState(true)
-    const [formData, setFormData] = useState({})
     const [step2, setStep2] = useState(false)
     const [step3, setStep3] = useState(false)
     const [step4, setStep4] = useState(false)
-    const [coverLetter, setCoverLetter] = useState(true);
     const [review, setReview] = useState(false)
-    const comp = JSON.parse(localStorage.getItem('appliedJob')).companyName
+    const [coverLetter, setCoverLetter] = useState(true);
+    const inputRef = useRef()
 
+    const comp = JSON.parse(localStorage.getItem('appliedJob')).companyName
+    const [formData, setFormData] = useState({})
+    let user = JSON.parse(localStorage.getItem('user'))
 
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -37,7 +38,7 @@ const ApplyForm = ({ setRight }) => {
         event.preventDefault();
         setStep1(!step1)
         setStep2(!step2)
-        console.log(formData)
+
     }
 
     const handleContinue2 = () => {
@@ -57,7 +58,6 @@ const ApplyForm = ({ setRight }) => {
         setRight(false)
     }
 
-
     const handleChoose = () => {
         inputRef.current.click();
     }
@@ -70,6 +70,8 @@ const ApplyForm = ({ setRight }) => {
         <>
             {step1 && <FormDiv>
                 <ProgressBar percent={20} unfilledBackground="gray" />
+
+
                 <h6>Application step 1 of 5</h6>
                 <h4 style={{ fontWeight: 600, margin: "19px 0" }}>Add your contact information</h4>
                 <form>
@@ -80,7 +82,7 @@ const ApplyForm = ({ setRight }) => {
                     <label htmlFor="phoneNumber">Phone number</label>
                     <input type="text" name="phoneNumber" onChange={handleChange} />
                     <h5>Email</h5>
-                    <p>abc@gmail.com</p>
+                    <p>{user?.emaild}</p>
                     <label htmlFor="city">City, State </label><small>(optional)</small>
                     <input type="text" name="city" onChange={handleChange} />
                     <div>
@@ -97,6 +99,7 @@ const ApplyForm = ({ setRight }) => {
 
             {step2 && <UploadResume>
                 <ProgressBar percent={40} unfilledBackground="gray" />
+
                 <div>
                     <BiArrowBack id="arrow" onClick={handleContinue1} />
                     <h6>Application step 2 of 5</h6>
@@ -111,6 +114,7 @@ const ApplyForm = ({ setRight }) => {
                     </section>
                     <TiTick />
                 </div>
+
                 <div>
                     <h5 style={{ margin: 0, padding: 0 }}>Return to job search</h5>
                     <button onClick={handleContinue2}>Continue</button>
@@ -120,6 +124,7 @@ const ApplyForm = ({ setRight }) => {
 
             {step3 && <AddExperience>
                 <ProgressBar percent={60} unfilledBackground="gray" />
+
                 <div>
                     <BiArrowBack id="arrow" onClick={handleContinue2} />
                     <h6>Application step 3 of 5</h6>
@@ -134,13 +139,11 @@ const ApplyForm = ({ setRight }) => {
                     <label htmlFor="experience">Experience </label><span>(in years)</span>
                     <input type="number" name="experience" onChange={handleChange} />
                 </form>
-
                 <div>
                     <h5>Exit</h5>
                     <button onClick={handleContinue3}>Continue</button>
                 </div>
                 <p>Having an issue with this application?<span>Tell us more</span></p>
-
             </AddExperience>}
 
             {step4 && <AddCoverLetter>
@@ -168,13 +171,11 @@ const ApplyForm = ({ setRight }) => {
                     </section>
                     {!coverLetter && <TiTick />}
                 </div>
-
                 <div>
                     <h5>Exit</h5>
                     <button onClick={handleReview}>Review your application</button>
                 </div>
                 <p>Having an issue with this application?<span>Tell us more</span></p>
-
             </AddCoverLetter>}
 
             {review && <ReviewPage formData={formData} handleReview={handleReview} />}
