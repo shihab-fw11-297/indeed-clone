@@ -7,8 +7,7 @@ Indeed is a website which is a free service to job seekers, where you can upload
 <br/>
 **To see the live site click the below link.**
 
-
-https://frontend-blond-kappa.vercel.app/
+https://zesty-cheesecake-55ad56.netlify.app/
 
 ## Installing and Running
 
